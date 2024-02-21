@@ -17,7 +17,7 @@ export default function NavBar({}: Props) {
               <MdOutlineLocationOn className='text-3xl'/>
               <p className="text-slate-900/80 text-sm">Brazil</p>
               <div>
-                <SerachBox />
+                <SerachBox value={''} onChange={undefined} onSubmit={undefined} />
               </div>
             </section>
         </div>
