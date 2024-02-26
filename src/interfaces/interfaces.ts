@@ -56,3 +56,18 @@ interface CityInfo {
     sunrise: number;
     sunset: number;
 }
+
+interface SingleWeatherDetailsProps {
+    information: string;
+    icon: React.ReactNode;
+    value: string;
+}
+
+interface WeatherDetailProps {
+    visibility: string;
+    humidity: string;
+    windSpeed: string;
+    airPressure: string;
+    sunrise: string;
+    sunset: string;
+}

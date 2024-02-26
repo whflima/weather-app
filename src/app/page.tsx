@@ -3,10 +3,11 @@
 import NavBar from "../components/NavBar";
 import { useQuery } from "react-query";
 import axios from "axios";
-import { format, parseISO } from "date-fns";
+import { format, fromUnixTime, parseISO } from "date-fns";
 import Container from "@/components/Container";
-import { converKelvinToCelsius, getDayOrNightIcon } from "@/utils/utilsFunctions";
+import { converKelvinToCelsius, convertWindSpeed, getDayOrNightIcon, metersToKilometers } from "@/utils/utilsFunctions";
 import WeatherIcon from "@/components/WeatherIcon";
+import WeatherDetails from "@/components/WeatherDetails";
 
 export default function Home() {
   const { isLoading, error, data } = useQuery<WeatherData>('repoData', async () => {
@@ -64,8 +65,33 @@ export default function Home() {
               </div>
             </Container>
           </div>
+
+          <div className="flex gap-4">
+            {/* left */}
+            <Container className="w-fit justify-center flex-col px-6 items-center">
+              <p className="capitalize text-center">{ firstDate?.weather[0].description }</p>
+              <WeatherIcon icomName={getDayOrNightIcon(firstDate?.weather[0].icon ?? "", firstDate?.dt_txt ?? "")}/>
+            </Container>
+
+            {/* right */}
+            <Container className="bg-yellow-300/80 px-6 gap-4 justify-between overflow-x-auto">
+              <WeatherDetails
+                airPressure={ `${firstDate?.main.pressure} hPa`}
+                humidity={ `${firstDate?.main.humidity}%` }
+                sunrise={ format(fromUnixTime(data?.city.sunrise ?? 1702949452), "H:mm") }
+                sunset={ format(fromUnixTime(data?.city.sunset ?? 1702949452), "H:mm") }
+                visibility={ metersToKilometers(firstDate?.visibility ?? 1000) }
+                windSpeed={ convertWindSpeed(firstDate?.wind.speed ?? 0) }
+              />
+              
+            </Container>
+          </div>
         </section>
-        <section></section>
+
+        {/* 7 day forcast data */}
+        <section className="flex w-full flex-col gap-4">
+          <p className="text-2xl">Forecast (7 days)</p>
+        </section>
       </main>
     </div>
   );
