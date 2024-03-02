@@ -82,3 +82,14 @@ interface ForecastWeatherDetailProps extends WeatherDetailProps{
     temp_max: number;
     description: string;
 }
+
+interface SuggestionBoxProps {
+    showSuggestions: boolean;
+    suggestions: string[];
+    handleSuggestionClick: (item: string) => void;
+    error: string;
+}
+
+interface NavBarProps {
+    location?: string;
+}
