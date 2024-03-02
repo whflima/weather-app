@@ -1,9 +1,12 @@
 {
   "name": "weather-app",
+  "homepage": "https://welisson-lima.github.io/weather-app/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,6 +15,7 @@
     "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "date-fns": "^2.30.0",
+    "gh-pages": "^6.1.1",
     "jotai": "^2.7.0",
     "next": "14.1.0",
     "react": "^18",
