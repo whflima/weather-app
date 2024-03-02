@@ -93,3 +93,10 @@ interface SuggestionBoxProps {
 interface NavBarProps {
     location?: string;
 }
+
+interface SearchBoxProps {
+    value: string;
+    className?: string;
+    onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+    onSubmit: React.FormEventHandler<HTMLFormElement> | undefined;
+}

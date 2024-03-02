@@ -3,7 +3,6 @@ import { FiDroplet } from 'react-icons/fi';
 import { ImMeter } from 'react-icons/im';
 import { LuEye, LuSunrise, LuSunset } from 'react-icons/lu';
 import { MdAir } from 'react-icons/md';
-import { WiHumidity } from 'react-icons/wi';
 
 export default function WeatherDetails(props: WeatherDetailProps) {
     const {

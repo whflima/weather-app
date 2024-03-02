@@ -24,7 +24,7 @@ export default function WeatherSkeletonLoading({ }: Props) {
 
             <div className="flex flex-col gap-4 animate-pulse">
                 <p className="text-2xl h-8 w-36 bg-gray-300 rounded"></p>
-                
+
                 {[1, 2, 3, 4, 5, 6, 7].map((index) => (
                     <div key={index} className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div className="h-8 w-28 bg-gray-300 rounded"></div>
