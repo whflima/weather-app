@@ -79,7 +79,7 @@ jobs:
           NEXT_PUBLIC_WEATHER_URL: ${{ secrets.NEXT_PUBLIC_WEATHER_URL }}
           NEXT_PUBLIC_WEATHER_KEY: ${{ secrets.NEXT_PUBLIC_WEATHER_KEY }}
       - name: Test environment variables
-        run: echo "$APP_TEST"
+        run: echo $APP_TEST
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
