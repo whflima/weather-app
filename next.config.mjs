@@ -1,8 +1,6 @@
-export const images = {
-    remotePatterns: [
-        {
-            protocol: 'https',
-            hostname: 'openweathermap.org',
-        },
-    ],
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export",
 };
+/* module.exports = nextConfig*/
+export default nextConfig;
