@@ -2,7 +2,6 @@
 
 > A simple React TypeScript application that fetches and displays weather information using the OpenWeatherMap API. The app allows users to search for the current weather of any location, showing details like temperature, humidity, wind speed, and weather conditions in an intuitive and user-friendly interface.
 
-<!-- 
 
 ### 🏠 [Homepage](https://whflima.github.io/weather-app/)
 
@@ -11,8 +10,7 @@
 Watch the video below for a quick demo of how the application works:
 
 > **Note:** The video may take some time to load. Please be patient.
-
--->
+![weather-app-](https://github.com/user-attachments/assets/94292817-b450-4f9f-8017-aaa29772f619)
 
 ## Clone
 
@@ -45,7 +43,7 @@ It will install all the necessary packages listed in the package.json file.
 Run the following command to start the development server:
 
 ```sh
-npm run start
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
