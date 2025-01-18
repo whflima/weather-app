@@ -27,7 +27,7 @@ export default function NavBar(props: NavBarProps) {
     if (value.length > 3) {
       try {
         const response = await axios.get(`${API_URL}/find?q=${value}&appid=${API_KEY}`);
-        const suggestions = response.data.list.map((item: any) => item.name);
+        const suggestions = response.data.list.map((item: any) => `${item.name}, ${item.sys.country}`);
         setSuggestions(suggestions);
         setError("");
         setShowSuggestions(true);
