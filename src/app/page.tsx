@@ -21,9 +21,6 @@ export default function Home() {
   const [place, setPlace] = useAtom(placeAtom);
   const [loadingCity, setLoadingCity] = useAtom(loadingCityAtom);
 
-  console.log(API_KEY);
-  console.log(API_URL);
-
   const { isLoading, error, data, refetch } = useQuery<WeatherData>('repoData', async () => {
     const { data } = await axios.get(`${API_URL}/forecast?q=${place}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&cnt=56`);
     return data;
